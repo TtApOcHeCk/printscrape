@@ -23,13 +23,13 @@ if not os.path.exists(img_dir):
 def main():
     initial_url = get_string()
     full_url = 'http://prnt.sc/' + initial_url
-    print '[*] processing link {}'.format(full_url)
+    print('[*] processing link {}'.format(full_url))
     image_link = get_img_link(full_url)
     if image_link:
-        print '[+] image found {}'.format(image_link)
+        print('[+] image found {}'.format(image_link))
         save_img(initial_url, image_link)
     else:
-        print '[-] bad luck, moving on'
+        print('[-] bad luck, moving on')
 
 def get_string():
     initial_symbol = list(string.digits + string.ascii_lowercase[:6])#6 #first symbol rules: [0-9a-f] (others haven't been uploaded yet)
@@ -51,9 +51,9 @@ def write_to_base(link):
         base_file.write(link + '\n')
 
 def get_img_link(link):
-    html_response = scraper.get(link).content
-    native_img = re.search('http://image.prntscr.com/image/\w+.png', html_response)
-    imgur_img = re.search('http://i.imgur.com/\w+.png', html_response)
+    html_response = str(scraper.get(link).content)
+    native_img = re.search(r'http://image.prntscr.com/image/\w+.png', html_response)
+    imgur_img = re.search(r'http://i.imgur.com/\w+.png', html_response)
     if (native_img or imgur_img):
         return (native_img or imgur_img).group()
 
