@@ -74,8 +74,8 @@ def write_to_base(link):
 
 def get_img_link(link):
     html_response = scraper.get(link).content
-    native_img = re.search('http://image.prntscr.com/image/\w+.png', html_response)
-    imgur_img = re.search('http://i.imgur.com/\w+.png', html_response)
+    native_img = re.search('http[s]*://image.prntscr.com/image/\w+.png', html_response)
+    imgur_img = re.search('http[s]*://i.imgur.com/\w+.png', html_response)
     if (native_img or imgur_img):
         return (native_img or imgur_img).group()
 
