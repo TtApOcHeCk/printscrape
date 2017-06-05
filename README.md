@@ -9,4 +9,4 @@ You can specify a charset mask for links generating with the argument -c (--char
 * possible wildcards: ?d - [0-9], ?s - [a-z], ?a - [0-9a-z]
 * you can also set a letter, a number, or the range of numbers or letters in curly brackets (possible examples: {a-d0-5}, {a0-9},{a0},{0-1f})
 * you must place each character specification one by one like this: {d}{?s}{?s}{?a}
-* you may ommit characters in the mask, specifying only few of them; others will be fully random ("?a")
+* you may omit characters in the mask, specifying only few of them; others will be fully random ("?a")
